@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="barcode128Generator.view.WindowController">
+   <children>
+      <AnchorPane prefHeight="476.0" prefWidth="394.0">
+         <children>
+            <TitledPane alignment="CENTER" layoutX="17.0" layoutY="334.0" prefHeight="132.0" prefWidth="360.0" text="generowanie z xlsx">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="172.0" prefWidth="280.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#generateFromXLS" text="Generuj" />
+                        <Label layoutX="10.0" layoutY="10.0" text="Folder &quot;IN&quot;: " />
+                        <Label fx:id="folderIN" layoutX="100.0" layoutY="10.0" text="Label" />
+                        <Label layoutX="10.0" layoutY="34.0" text="Folder &quot;OUT&quot;: " />
+                        <Label fx:id="folderOUT2" layoutX="100.0" layoutY="34.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+          <AnchorPane layoutX="18.0" layoutY="55.0" minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="358.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="338.0" spacing="5.0">
+                     <children>
+                        <Label layoutX="10.0" prefWidth="50.0" text="Nazwa:" />
+                        <TextField fx:id="nameOfProduct" prefHeight="27.0" prefWidth="279.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="45.0" prefHeight="35.0" prefWidth="338.0" spacing="5.0">
+                     <children>
+                        <Label layoutX="10.0" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Kod:" />
+                        <TextField fx:id="code" prefHeight="27.0" prefWidth="300.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="80.0" prefHeight="35.0" prefWidth="338.0" spacing="5.0">
+                     <children>
+                        <Label layoutX="10.0" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="DED:" />
+                        <TextField fx:id="DEDNumber" prefHeight="27.0" prefWidth="300.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="115.0" prefHeight="35.0" prefWidth="338.0" spacing="5.0">
+                     <children>
+                        <Label layoutX="10.0" text="Nakład:" />
+                        <TextField fx:id="count" prefHeight="27.0" prefWidth="283.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="180.0" prefHeight="35.0" prefWidth="338.0" spacing="20.0">
+                     <children>
+                        <RadioButton fx:id="lorealRadioBtn" mnemonicParsing="false" selected="true" text="LOREAL">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="client" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="lorealDEDRadioBtn" layoutX="100.0" layoutY="19.0" mnemonicParsing="false" text="LOREAL z nr DED" toggleGroup="$client" />
+                        <RadioButton fx:id="kompaniaRadioBtn" mnemonicParsing="false" text="KOMPANIA" toggleGroup="$client" />
+                     </children>
+                  </HBox>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="221.0" mnemonicParsing="false" onMouseClicked="#generateFromTextFields" text="Generuj" textAlignment="CENTER" />
+                  <Label layoutX="10.0" layoutY="153.0" text="Folder &quot;OUT&quot;: " />
+                  <Label fx:id="folderOUT1" layoutX="108.0" layoutY="153.0" text="Label" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="262.0" mouseTransparent="true" stroke="#00000080" strokeType="INSIDE" width="360.0" />
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="14.0" text="GENERATOR BARCODE 128" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
