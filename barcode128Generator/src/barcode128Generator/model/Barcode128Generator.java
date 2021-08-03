@@ -401,12 +401,12 @@ public class Barcode128Generator  {
 			
 			bitMatrix = code128Writer.encode(code, BarcodeFormat.CODE_128, widthOfBarcode, heightOfBarcode, hintMap);			
 			barcodeProductCode = prepareBarcodeToPDF(bitMatrix, hintMap);
-			reductionRatioCode = (widthPX - 10) / bitMatrix.width; // odejmuje 10, aby kod nie był rozciągnięty na całą etykietę 
+			reductionRatioCode = (widthPX - 10) / bitMatrix.getWidth(); // odejmuje 10, aby kod nie był rozciągnięty na całą etykietę 
 			
 			bitMatrix = code128Writer.encode(DEDnumber, BarcodeFormat.CODE_128, widthOfBarcode, heightOfBarcode, hintMap);		
 			barcodeDED = prepareBarcodeToPDF(bitMatrix, hintMap);
 			
-			reductionRatioDED = (widthPX - 10) / bitMatrix.width; // odejmuje 10, aby kod nie był rozciągnięty na całą etykietę – żeby miał marginesy
+			reductionRatioDED = (widthPX - 10) / bitMatrix.getWidth(); // odejmuje 10, aby kod nie był rozciągnięty na całą etykietę – żeby miał marginesy
 			
 			writeWithDEDNumberPDF(texts, barcodeProductCode, barcodeDED, reductionRatioCode, reductionRatioDED);
 		}
